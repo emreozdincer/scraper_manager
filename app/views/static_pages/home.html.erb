@@ -1,6 +1,30 @@
 <% provide(:title, "Home") %>
-<h1>Welcome to the Scraper Manager</h1>
-<h2>
-	Click <%= link_to "here", scrapers_path%> to see all scrapers.<br/>
-	Click <%= link_to "here", scrapers_new_path%> to add a new scraper.
-</h2>
+
+<h1> All Scrapers </h1>
+
+<table class ="table table-hover">
+	<div align="right">
+  <%= link_to "New Scraper", scrapers_new_path, class: "btn btn-primary"%>
+  </div>
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>YouTube ID</th>
+    <th>Links </th>
+  </thead>
+ 
+  <% @scrapers.each do |s| %>
+    <tr>
+      <td><%= s.id %></td>
+      <td><%= s.name %></td>
+      <td><%= s.youtube_id %></td>
+      <td><%= link_to 'Show', scraper_path(s) %> | 
+      		<%= link_to 'Edit', edit_scraper_path(s) %> | 
+      		<%= link_to 'Delete', scraper_path(s),
+      		method: :delete,
+      		data: { confirm: 'Are you sure>'} %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+

@@ -21,6 +21,27 @@ class ScrapersController < ApplicationController
     end
   end
 
+  def edit
+    @scraper = Scraper.find(params[:id])
+  end
+
+def update
+  @scraper = Scraper.find(params[:id])
+ 
+  if @scraper.update(scraper_params)
+    redirect_to @scraper
+  else
+    render 'edit'
+  end
+end
+
+def destroy
+  @scraper = Scraper.find(params[:id])
+  @scraper.destroy
+ 
+  redirect_to root_path
+end
+
   private
 
     def scraper_params

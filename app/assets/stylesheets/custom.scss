@@ -79,6 +79,13 @@ a {
 
 .btn-primary {
 	background-color: darkred;
+	border-color: darkred;
+
+}
+
+.btn-primary:hover{
+	background-color: firebrick;
+	border-color: firebrick;
 }
 
 /* header */
