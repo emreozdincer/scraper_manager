@@ -1,6 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
 /* universal */
 
 body {
@@ -37,7 +47,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.4em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
@@ -45,9 +55,21 @@ h2 {
   color: #777;
 }
 
+ul {
+	text-align:center;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+a {
+ color: darkred;
+}
+
+.btn-primary {
+	background-color: darkred;
 }
 
 /* header */
@@ -70,4 +92,43 @@ p {
 
 .navbar-fixed-top {
 	background-color: darkred;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  //margin-bottom: 5px;
+  @include box_sizing;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }

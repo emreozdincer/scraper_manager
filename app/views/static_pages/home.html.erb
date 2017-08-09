@@ -1,3 +1,6 @@
 <% provide(:title, "Home") %>
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<h1>Welcome to the Scraper Manager</h1>
+<h2>
+	Click <%= link_to "here", scrapers_path%> to see all scrapers.<br/>
+	Click <%= link_to "here", scrapers_new_path%> to add a new scraper.
+</h2>
