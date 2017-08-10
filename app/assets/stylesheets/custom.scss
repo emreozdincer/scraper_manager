@@ -80,12 +80,25 @@ a {
 .btn-primary {
 	background-color: darkred;
 	border-color: darkred;
-
+  &:hover{
+    background-color: firebrick;
+    border-color: firebrick;
+    }
 }
 
-.btn-primary:hover{
-	background-color: firebrick;
-	border-color: firebrick;
+.pagination {
+  float: right;
+  .active a{
+    background-color: darkred;
+    border-color: darkred;
+    &:hover{
+    background-color: firebrick;
+    border-color: firebrick;
+    }
+  }
+  li a{
+  color: #777;
+  }
 }
 
 /* header */

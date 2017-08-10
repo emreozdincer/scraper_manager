@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Scraper.create!(name: "Example User",
+                youtube_id: "Example youtube_id")
+
+99.times do |n|
+  name = Faker::Name.name
+  youtube_id = "example-#{n+1}"
+  Scraper.create!(name: name,
+                  youtube_id: youtube_id)
+end

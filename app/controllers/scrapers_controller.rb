@@ -38,7 +38,7 @@ end
 def destroy
   @scraper = Scraper.find(params[:id])
   @scraper.destroy
- 
+  flash[:success] = "User deleted"
   redirect_to root_path
 end
 
